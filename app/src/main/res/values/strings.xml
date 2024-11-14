@@ -1,0 +1,13 @@
+<resources>
+    <string name="app_name">ImageInternetShop</string>
+    <string name="textEnterBTN">Войти</string>
+    <string name="textLogoTV">Магазин картинок</string>
+    <string name="titleToolbarShop">Магазин картинок</string>
+    <string name="subtitleToolbarShop">Витрина</string>
+    <string name="titleMenuShopExit">Выход</string>
+    <string name="textConfirmationMessageTV">Вы уверены, что хотите добавить этот товар в корзину?</string>
+    <string name="textYesBTN">Да</string>
+    <string name="textNoBTN">Нет</string>
+    <string name="textProductNameTV">Домик</string>
+    <string name="textProductPriceTV">500.00</string>
+</resources>
