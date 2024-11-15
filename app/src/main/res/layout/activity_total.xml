@@ -5,34 +5,31 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ShopActivity"
-    android:background="@drawable/background">
+    tools:context=".TotalActivity">
 
     <androidx.appcompat.widget.Toolbar
-        android:id="@+id/toolbarShop"
+        android:id="@+id/toolbarTotal"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         app:title="@string/titleToolbarShop"
-        app:subtitle="@string/subtitleToolbarShop"/>
+        app:subtitle="@string/subtitleToolbarTotal"/>
 
     <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/shopRV"
+        android:id="@+id/totalRV"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_marginTop="25dp"
-        android:layout_below="@id/toolbarShop"
-        tools:listitem="@layout/shop_recycler_list"
+        android:layout_below="@id/toolbarTotal"
+        tools:listitem="@layout/basket_recycler_list"
         android:layout_margin="8dp"/>
 
-    <com.google.android.material.floatingactionbutton.FloatingActionButton
-        android:id="@+id/shopFloatingBTN"
-        android:layout_width="wrap_content"
+    <TextView
+        android:id="@+id/totalPriceTotalTV"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:src="@drawable/ic_shopping_basket"
-        android:layout_alignParentRight="true"
         android:layout_alignParentBottom="true"
-        android:layout_margin="25dp"
-        android:visibility="gone"
-        tools:ignore="ContentDescription,RtlHardcoded" />
+        android:text="@string/textTotalPriceTV"
+        android:textSize="22sp"
+        android:textAlignment="center"/>
 
 </RelativeLayout>

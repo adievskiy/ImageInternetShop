@@ -1,4 +1,6 @@
-package com.example.imageinternetshop
+package com.example.imageinternetshop.lists
+
+import com.example.imageinternetshop.R
 
 class Product(val image: Int, val name: String, val price: Double) {
     companion object {

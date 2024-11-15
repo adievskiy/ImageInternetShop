@@ -18,6 +18,9 @@ import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import com.example.imageinternetshop.lists.Basket
+import com.example.imageinternetshop.lists.Product
+import com.example.imageinternetshop.lists.ProductAdapter
 import com.google.android.material.badge.BadgeDrawable
 import com.google.android.material.badge.BadgeUtils
 import com.google.android.material.floatingactionbutton.FloatingActionButton
@@ -27,7 +30,7 @@ class ShopActivity : AppCompatActivity() {
     private lateinit var toolbarShop: Toolbar
     private lateinit var shopRV: RecyclerView
     private lateinit var basketFloatingBTN: FloatingActionButton
-    private val basket = mutableListOf<Product>()
+    private val basket = mutableListOf<Basket>()
     private var count = 0
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -55,14 +58,16 @@ class ShopActivity : AppCompatActivity() {
 
 
         basketFloatingBTN.setOnClickListener {
-            startActivity(Intent(this, BasketActivity::class.java))
+            val intent = Intent(this, BasketActivity::class.java)
+            intent.putExtra("basket", ArrayList(basket))
+            startActivity(intent)
         }
     }
 
     private fun init() {
         toolbarShop = findViewById(R.id.toolbarShop)
         shopRV = findViewById(R.id.shopRV)
-        basketFloatingBTN = findViewById(R.id.basketFloatingBTN)
+        basketFloatingBTN = findViewById(R.id.shopFloatingBTN)
     }
 
     private fun scaleTo(product: Product) {
@@ -87,9 +92,12 @@ class ShopActivity : AppCompatActivity() {
         val noButton = dialog.findViewById<Button>(R.id.noBTN)
 
         yesButton.setOnClickListener {
-            basket.add(product)
+            val image = product.image
+            val name = product.name
+            val price = product.price
+            val buyingProduct = Basket(image, name, price)
+            basket.add(buyingProduct)
             count++
-            Toast.makeText(this, "$count", Toast.LENGTH_LONG).show()
             basketFloatingBTN.visibility = View.VISIBLE
             createBadge()
             dialog.dismiss()

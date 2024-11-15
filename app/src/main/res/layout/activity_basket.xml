@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/main"
@@ -7,4 +7,39 @@
     android:layout_height="match_parent"
     tools:context=".BasketActivity">
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbarBasket"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:title="@string/titleToolbarShop"
+        app:subtitle="@string/subtitleToolbarBasket"/>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/basketRV"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="25dp"
+        android:layout_below="@id/toolbarBasket"
+        tools:listitem="@layout/basket_recycler_list"
+        android:layout_margin="8dp"/>
+
+    <TextView
+        android:id="@+id/totalPriceTV"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:text="@string/textTotalPriceTV"
+        android:textSize="22sp"
+        android:textAlignment="center"/>
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/basketFloatingBTN"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/ic_check"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentBottom="true"
+        android:layout_margin="25dp"
+        tools:ignore="ContentDescription,RelativeOverlap,RtlHardcoded" />
+
+</RelativeLayout>
